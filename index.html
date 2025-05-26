@@ -6,40 +6,76 @@
     <title>Smith's Portfolio</title>
     <style>
       body {
-        text-align: center;
+        text-align: left;
+        margin: 1rem;
+        padding: 1rem;
       }
-      #myMenu{
+      #myMenu {
         list-style: none;
         margin: 0;
         padding: 0;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        grid-template-rows: 1fr 15fr 1fr;
+        height: 100vh;
+        gap: 1rem;
+      }
+      .container {
+        margin: 0;
+        padding: 1rem;
+        border-width: 3px;
+        border-style: solid;
+        border-color: black;
+        border-radius: 1rem;
+      }
+      .header {
+        grid-column: span 2;
+      }
+      .footer {
+        grid-column: span 2;
       }
     </style>
   </head>
 
   <body>
-    <div>
-      <p>Welcome to my Project Hub.</p>
-      <p>Here you’ll find some examples of code I’ve written in the past. This website is still under construction, so be sure to check back soon!</p>
+    <div class="grid">
+      <div class="header container">
+        <h1>Smith-at-Forge</h1>
+        <h2>Welcome to my Project Hub</h2>
+        <p>
+          Here you’ll find some examples of code I’ve written in the past. 
+        </p>
+        <p>
+This
+          website is still under construction, so be sure to check back soon!
+        </p>
+      </div>
+      <div class="navbar container">
+        <ul id="myMenu">
+          <li><a href="./html+css.html">HTML + CSS</a></li>
+          <li><a href="./c++.html">C++</a></li>
+          <li><a>JavaScript</a></li>
+          <li><a>PHP</a></li>
+          <li><a>Python</a></li>
+          <li><a>jQuery</a></li>
+          <li><a>SQL</a></li>
+          <li><a>Bootstrap</a></li>
+          <li><a>Node.js</a></li>
+        </ul>
+        
+      </div>
+      <div class="maincontent container">
+        <p>Update Log</p>
+        <p>2025.05.26 changed Design of the Homepage</p>
+        <p>2025.05.25 created Homepage</p>
+      </div>
+      <div class="footer container">
+        <div>© 2025 Smith-at-Forge</div>
+        <div>About me</div>
+        <div>Contact me</div>
+      </div>
     </div>
-    <hr />
-    <div class="container">
-      <ul id="myMenu">
-        <li><a href="./html+css.html">HTML + CSS</a></li>
-        <li><a href="./c++.html">C++</a></li>
-        <li><a>JavaScript</a></li>
-        <li><a>PHP</a></li>
-        <li><a>Python</a></li>
-        <li><a>jQuery</a></li>
-        <li><a>SQL</a></li>
-        <li><a>Bootstrap</a></li>
-        <li><a>Node.js</a></li>
-      </ul>
-    </div>
-    <hr />
-    <div><p>Update Log</p>
-      <p>2025.05.25 created Homepage</p>
-    </div>
-    <hr />
-    <div>Footer</div>
   </body>
 </html>
