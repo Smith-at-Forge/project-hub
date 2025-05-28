@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>C++ Portfolio</title>
+    <link rel="stylesheet" href="./fonts/fonts.css" />
     <style>
       pre code {
         display: block;
@@ -11,8 +12,9 @@
         color: #e6e6e6;
         padding: 1em;
         border-radius: 8px;
-        font-family: "Fira Mono", "Consolas", "Monaco", monospace;
-        font-size: 1em;
+        font-family: JetBrainsMono, monospace;
+        font-style: normal;
+        font-weight: 500;
         overflow-x: auto;
         line-height: 1.5;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -25,6 +27,7 @@
         padding: 2em;
       }
     </style>
+    <link href="./css/prism.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -32,10 +35,9 @@
       <a href="./index.html">Back to Project Hub</a>
     </div>
     <hr />
-    <pre><code>
-#include <iostream> //cout
-#include <cmath>    //sqrt
-#include <iomanip>  //setprecision
+    <pre><code class="language-cpp">#include &lt;iostream> //cout
+#include &lt;cmath>    //sqrt
+#include &lt;iomanip>  //setprecision
 using namespace std;
 
 class Complex
@@ -58,7 +60,7 @@ public:
     double getB() const { return b; };
     void display();
     void display(const Complex &other);
-    friend ostream &operator<<(ostream &os, const Complex &c);
+    friend ostream &operator&lt;&lt;(ostream &os, const Complex &c);
 };
 Complex::Complex(const double &aKonstruktor, const double &bKonstruktor)
 { // Konstruktor
@@ -133,11 +135,11 @@ Complex operator/(const double &x, const Complex &other)
 }
 void Complex::display()
 {
-    cout << a << "+" << b << "i (Betrag: " << setprecision(4) << betrag << ")" << endl;
+    cout &lt;&lt; a &lt;&lt; "+" &lt;&lt; b &lt;&lt; "i (Betrag: " &lt;&lt; setprecision(4) &lt;&lt; betrag &lt;&lt; ")" &lt;&lt; endl;
 }
-ostream &operator<<(ostream &os, const Complex &c)
+ostream &operator&lt;&lt;(ostream &os, const Complex &c)
 {
-    os << "(" << c.a << "+" << c.b << "i)";
+    os &lt;&lt; "(" &lt;&lt; c.a &lt;&lt; "+" &lt;&lt; c.b &lt;&lt; "i)";
     return os;
 }
 
@@ -147,41 +149,41 @@ int main()
     {
         Complex zahl1(4, 5);
         Complex zahl2(5, 7);
-        cout << "Zwei komplexe Zahle, K1 und K2: " << endl;
+        cout &lt;&lt; "Zwei komplexe Zahle, K1 und K2: " &lt;&lt; endl;
         zahl1.display();
         zahl2.display();
-        cout << '\n'
-             << "Teste Komplex & Komplex (K1+K2-K2)*K2/K2, Ergebnis: " << endl;
+        cout &lt;&lt; '\n'
+             &lt;&lt; "Teste Komplex & Komplex (K1+K2-K2)*K2/K2, Ergebnis: " &lt;&lt; endl;
         Complex ergebnisKK = (zahl1 + zahl2); // teste komplexe Zahlen
         ergebnisKK = ergebnisKK - zahl2;
         ergebnisKK = ergebnisKK * zahl2;
         ergebnisKK = ergebnisKK / zahl2;
         ergebnisKK.display();
-        cout << '\n'
-             << "Teste Komplex & Reell (K2+7-7)*7/7, Ergebnis: " << endl;
+        cout &lt;&lt; '\n'
+             &lt;&lt; "Teste Komplex & Reell (K2+7-7)*7/7, Ergebnis: " &lt;&lt; endl;
         Complex ergebnisKR = zahl2 + 7; // teste reelle Zahlen
         ergebnisKR = ergebnisKR - 7;    // einzelne Tests sind notwendig,
         ergebnisKR = ergebnisKR / 7;    // sonst optimiert Kompiler +7-7 zu 0
         ergebnisKR = ergebnisKR * 7;
         ergebnisKR.display();
-        cout << '\n'
-             << "Teste Reell & Komplex (Reell = 9, Komplex = K1): " << endl;
+        cout &lt;&lt; '\n'
+             &lt;&lt; "Teste Reell & Komplex (Reell = 9, Komplex = K1): " &lt;&lt; endl;
         Complex ergebnisRK1 = 9 + zahl1;
-        cout << "9 + " << zahl1 << " = " << ergebnisRK1 << endl;
+        cout &lt;&lt; "9 + " &lt;&lt; zahl1 &lt;&lt; " = " &lt;&lt; ergebnisRK1 &lt;&lt; endl;
         ergebnisRK1 = 9 - zahl1;
-        cout << "9 - " << zahl1 << " = " << ergebnisRK1 << endl;
+        cout &lt;&lt; "9 - " &lt;&lt; zahl1 &lt;&lt; " = " &lt;&lt; ergebnisRK1 &lt;&lt; endl;
         ergebnisRK1 = 9 * zahl1;
-        cout << "9 * " << zahl1 << " = " << ergebnisRK1 << endl;
+        cout &lt;&lt; "9 * " &lt;&lt; zahl1 &lt;&lt; " = " &lt;&lt; ergebnisRK1 &lt;&lt; endl;
         ergebnisRK1 = 9 / zahl1;
-        cout << "9 / " << zahl1 << " = " << ergebnisRK1 << endl;
-        cout << endl;
+        cout &lt;&lt; "9 / " &lt;&lt; zahl1 &lt;&lt; " = " &lt;&lt; ergebnisRK1 &lt;&lt; endl;
+        cout &lt;&lt; endl;
     }
     catch (const runtime_error &e)
     {
-        cout << "Fehler: " << e.what() << endl;
+        cout &lt;&lt; "Fehler: " &lt;&lt; e.what() &lt;&lt; endl;
     }
 }
-
     </code></pre>
+    <script src="./js/prism.js"></script>
   </body>
 </html>
