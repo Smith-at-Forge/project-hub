@@ -1,0 +1,13 @@
+# JS
+
+# PHP
+
+# Python
+
+# Java
+*.class
+*.jar
+
+# C/C++
+*.exe
+*.o
