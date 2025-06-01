@@ -14,10 +14,11 @@
         font-style: normal;
         font-weight: 500;
       }
-      #myMenu {
+      .list {
         list-style: none;
         margin: 0;
         padding: 0;
+        padding-left: 1rem;
       }
       .grid {
         display: grid;
@@ -40,6 +41,9 @@
       .footer {
         grid-column: span 2;
       }
+      .footer > * {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
     </style>
   </head>
 
@@ -57,8 +61,13 @@
         </p>
       </div>
       <div class="navbar container">
-        <ul id="myMenu">
-          <li><a href="./html+css.html">HTML + CSS</a></li>
+        <h3>Projects</h3>
+        <ul class="list">
+          <li><a>Placeholder</a></li>
+        </ul>
+        <h3>Code Examples</h3>
+        <ul class="list">
+          <li><a href="./first_webpage/index.html">First Webpage</a></li>
           <li><a href="./c++.html">C++</a></li>
           <li><a href="./ccc.html">C language</a></li>
           <li><a>PHP</a></li>
@@ -68,10 +77,19 @@
           <li><a>Bootstrap</a></li>
           <li><a>Node.js</a></li>
         </ul>
+        <h3>Update Log</h3>
       </div>
       <div class="maincontent container">
         <p>Update Log</p>
-        <p>2025.05.28 Added Prism.js for code snippet syntax highlighting. Added C language source file.</p>
+        <p>
+          2025.06.01 Fixed the issue where the JetBrains Mono font was not
+          displayed correctly. Added a directory for source files. Added
+          .gitignore.
+        </p>
+        <p>
+          2025.05.28 Added Prism.js for code snippet syntax highlighting. Added
+          C language example.
+        </p>
         <p>2025.05.27 added JetBrains Mono font</p>
         <p>2025.05.26 changed Design of the Homepage</p>
         <p>2025.05.25 created Homepage</p>
