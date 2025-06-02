@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <style>
       body {
+        /* Background styling for main layout */
+        background-image: url("./images/swe-photo-1.avif");
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        /* General styling */
         text-align: left;
         margin: 1rem;
         padding: 1rem;
@@ -18,7 +24,17 @@
         list-style: none;
         margin: 0;
         padding: 0;
-        padding-left: 1rem;
+      }
+      .list li a {
+        display: block; /* Make entire link area clickable */
+        padding-left: 0.5rem;
+        /*text-decoration: none;*/ /* Remove underline from links */
+        /*color: inherit;*/ /* Inherit text color to eliminate default blue link styling */
+        border-radius: 5px;
+        transition: background 0.2s; /* Smooth color transition on hover */
+      }
+      .list li a:hover {
+        background: #f0f0f0;
       }
       .grid {
         display: grid;
@@ -28,6 +44,12 @@
         gap: 1rem;
       }
       .container {
+        background: rgba(
+          255,
+          255,
+          255,
+          0.8
+        ); /* White background with 80% opacity */
         margin: 0;
         padding: 1rem;
         border-width: 3px;
@@ -63,13 +85,12 @@
       <div class="navbar container">
         <h3>Projects</h3>
         <ul class="list">
-          <li><a>Placeholder</a></li>
+          <li><a href="./first_webpage/index.html">First Webpage</a></li>
         </ul>
         <h3>Code Examples</h3>
         <ul class="list">
-          <li><a href="./first_webpage/index.html">First Webpage</a></li>
           <li><a href="./c++.html">C++</a></li>
-          <li><a href="./ccc.html">C language</a></li>
+          <li><a href="./ccc.html">C</a></li>
           <li><a>PHP</a></li>
           <li><a>Python</a></li>
           <li><a>jQuery</a></li>
@@ -78,21 +99,28 @@
           <li><a>Node.js</a></li>
         </ul>
         <h3>Update Log</h3>
+        <ul class="list">
+          <li><a href="./index.html">Update Log</a></li>
+        </ul>
       </div>
       <div class="maincontent container">
-        <p>Update Log</p>
+        <h3>Update Log</h3>
         <p>
-          2025.06.01 Fixed the issue where the JetBrains Mono font was not
-          displayed correctly. Added a directory for source files. Added
-          .gitignore.
+          2025-06-02: Add background image. Update comments in update log for
+          consistency. Redesign list elements as block elements with hover for
+          improved usability.
+        </p>
+
+        <p>
+          2025-06-01: Fix JetBrains Mono font rendering. Add source directory
+          with initial files. Add .gitignore.
         </p>
         <p>
-          2025.05.28 Added Prism.js for code snippet syntax highlighting. Added
-          C language example.
+          2025-05-28: Integrate Prism.js for syntax highlighting. Add C example.
         </p>
-        <p>2025.05.27 added JetBrains Mono font</p>
-        <p>2025.05.26 changed Design of the Homepage</p>
-        <p>2025.05.25 created Homepage</p>
+        <p>2025-05-27: Add JetBrains Mono font.</p>
+        <p>2025-05-26: Redesign homepage.</p>
+        <p>2025-05-25: Initial homepage creation.</p>
       </div>
       <div class="footer container">
         <div>© 2025 Smith-at-Forge</div>
