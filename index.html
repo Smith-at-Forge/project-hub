@@ -6,41 +6,32 @@
     <title>Smith's Portfolio</title>
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <style>
+      html {
+        font-size: 16px; /* Default font size for rem units */
+      }
       body {
         /* Background styling for main layout */
         background-image: url("./images/swe-photo-1.avif");
         background-size: cover;
         background-position: center;
-        min-height: 100vh;
         /* General styling */
-        text-align: left;
-        margin: 1rem;
-        padding: 1rem;
-        font-family: JetBrainsMono;
-        font-style: normal;
-        font-weight: 500;
-      }
-      .list {
-        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
         margin: 0;
         padding: 0;
-      }
-      .list li a {
-        display: block; /* Make entire link area clickable */
-        padding-left: 0.5rem;
-        /*text-decoration: none;*/ /* Remove underline from links */
-        /*color: inherit;*/ /* Inherit text color to eliminate default blue link styling */
-        border-radius: 5px;
-        transition: background 0.2s; /* Smooth color transition on hover */
-      }
-      .list li a:hover {
-        background: #f0f0f0;
+        text-align: left;
+        font-family: Cambria, JetBrainsMono;
+        font-style: normal;
+        font-weight: 500;
       }
       .grid {
         display: grid;
         grid-template-columns: 1fr 4fr;
-        grid-template-rows: 1fr 15fr 1fr;
-        height: 100vh;
+        grid-template-rows: 1fr 15fr 1fr 1rem;
+        padding: 2rem 2rem 0 2rem; /* Padding for the grid container, bottom = 0 */
+        height: calc(100vh - 2rem); /* Full viewport height minus padding */
         gap: 1rem;
       }
       .container {
@@ -65,6 +56,25 @@
       }
       .footer > * {
         grid-template-columns: 1fr 1fr 1fr;
+      }
+      .footer.ghost {
+        grid-column: span 2;
+      }
+      .list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .list li a {
+        display: block; /* Make entire link area clickable */
+        padding-left: 0.5rem;
+        /*text-decoration: none;*/ /* Remove underline from links */
+        /*color: inherit;*/ /* Inherit text color to eliminate default blue link styling */
+        border-radius: 5px;
+        transition: background 0.2s; /* Smooth color transition on hover */
+      }
+      .list li a:hover {
+        background: #f0f0f0;
       }
     </style>
   </head>
@@ -106,6 +116,10 @@
       <div class="maincontent container">
         <h3>Update Log</h3>
         <p>
+          2025-06-03: Add initial documentation for code examples. Fix grid-box
+          responsiveness issue on browser resize.
+        </p>
+        <p>
           2025-06-02: Add background image. Update comments in update log for
           consistency. Redesign list elements as block elements with hover for
           improved usability.
@@ -126,6 +140,9 @@
         <div>© 2025 Smith-at-Forge</div>
         <div>About me</div>
         <div>Contact me</div>
+      </div>
+      <div class="footer ghost" style="visibility: hidden">
+        <!-- This is a ghost element to maintain layout consistency -->
       </div>
     </div>
   </body>
