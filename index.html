@@ -25,6 +25,7 @@
         font-family: Cambria, JetBrainsMono;
         font-style: normal;
         font-weight: 500;
+        font-size: 1.25rem; /* Increase base font size */
       }
       .grid {
         display: grid;
@@ -54,8 +55,14 @@
       .footer {
         grid-column: span 2;
       }
-      .footer > * {
+      .footer {
+        display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 1.1rem; /* Smaller font size for footer */
+        padding: 1.5rem; /* Padding for footer */
       }
       .footer.ghost {
         grid-column: span 2;
@@ -95,7 +102,9 @@
       <div class="navbar container">
         <h3>Projects</h3>
         <ul class="list">
+          <li><a>Shape Shifter</a></li>
           <li><a href="./first_webpage/index.html">First Webpage</a></li>
+          <li><a>Personal Website</a></li>
         </ul>
         <h3>Code Examples</h3>
         <ul class="list">
@@ -115,6 +124,9 @@
       </div>
       <div class="maincontent container">
         <h3>Update Log</h3>
+        <p>
+          2025-06-04: Redesign footer component. Add contact information.
+        </p>
         <p>
           2025-06-03: Add initial documentation for code examples. Fix grid-box
           responsiveness issue on browser resize.
@@ -137,9 +149,10 @@
         <p>2025-05-25: Initial homepage creation.</p>
       </div>
       <div class="footer container">
-        <div>© 2025 Smith-at-Forge</div>
+        
         <div>About me</div>
-        <div>Contact me</div>
+        <div><a href="https://github.com/Smith-at-Forge">Contact me</a></div>
+        <div>© 2025 Smith-at-Forge</div>
       </div>
       <div class="footer ghost" style="visibility: hidden">
         <!-- This is a ghost element to maintain layout consistency -->
