@@ -30,10 +30,13 @@
       .grid {
         display: grid;
         grid-template-columns: 1fr 4fr;
-        grid-template-rows: 1fr 15fr 1fr 1rem;
+        grid-template-rows: 1fr 15fr 1fr;
         padding: 2rem 2rem 0 2rem; /* Padding for the grid container, bottom = 0 */
-        height: calc(100vh - 2rem); /* Full viewport height minus padding */
+        height: calc(
+          100vh - 2rem
+        ); /* Full viewport height minus footer ghost */
         gap: 1rem;
+        max-width: 1080px; /* Maximum width for the grid */
       }
       .container {
         background: rgba(
@@ -66,6 +69,8 @@
       }
       .footer.ghost {
         grid-column: span 2;
+        padding: 0;
+        height: 1rem;
       }
       .list {
         list-style: none;
@@ -102,9 +107,15 @@
       <div class="navbar container">
         <h3>Projects</h3>
         <ul class="list">
-          <li><a>Shape Shifter</a></li>
+          <li>
+            <a href="https://github.com/Smith-at-Forge/ShapeShifter"
+              >Shape Shifter</a
+            >
+          </li>
           <li><a href="./first_webpage/index.html">First Webpage</a></li>
           <li><a>Personal Website</a></li>
+          <li><a>Review Analytics</a></li>
+          <!-- Product Review Analytics (AI-powered) -->
         </ul>
         <h3>Code Examples</h3>
         <ul class="list">
@@ -124,9 +135,12 @@
       </div>
       <div class="maincontent container">
         <h3>Update Log</h3>
-        <p>
-          2025-06-04: Redesign footer component. Add contact information.
-        </p>
+        <!-- <p>
+          2025-06-05: Small updates on width- and Grid-responsiveness. Adjust
+          width handling for improved responsiveness. Tweak grid layout for
+          better consictency.
+        </p> -->
+        <p>2025-06-04: Redesign footer component. Add contact information.</p>
         <p>
           2025-06-03: Add initial documentation for code examples. Fix grid-box
           responsiveness issue on browser resize.
@@ -149,7 +163,6 @@
         <p>2025-05-25: Initial homepage creation.</p>
       </div>
       <div class="footer container">
-        
         <div>About me</div>
         <div><a href="https://github.com/Smith-at-Forge">Contact me</a></div>
         <div>© 2025 Smith-at-Forge</div>
