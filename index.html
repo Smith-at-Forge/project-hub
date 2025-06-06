@@ -10,10 +10,6 @@
         font-size: 16px; /* Default font size for rem units */
       }
       body {
-        /* Background styling for main layout */
-        background-image: url("./images/swe-photo-1.avif");
-        background-size: cover;
-        background-position: center;
         /* General styling */
         display: flex;
         justify-content: center;
@@ -26,6 +22,14 @@
         font-style: normal;
         font-weight: 500;
         font-size: 1.25rem; /* Increase base font size */
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: Helvetica, serif;
       }
       .grid {
         display: grid;
@@ -121,8 +125,8 @@
         <ul class="list">
           <li><a href="./c++.html">C++</a></li>
           <li><a href="./ccc.html">C</a></li>
+          <li><a href="./fraction.html">Python</a></li>
           <li><a>PHP</a></li>
-          <li><a>Python</a></li>
           <li><a>jQuery</a></li>
           <li><a>SQL</a></li>
           <li><a>Bootstrap</a></li>
@@ -135,11 +139,16 @@
       </div>
       <div class="maincontent container">
         <h3>Update Log</h3>
-        <!-- <p>
-          2025-06-05: Small updates on width- and Grid-responsiveness. Adjust
-          width handling for improved responsiveness. Tweak grid layout for
-          better consictency.
-        </p> -->
+        <p>
+          2025-06-06: Add random background selection for main page. Consolidate
+          code example styles into shared CSS file. Fix Prism DOM structure
+          issue. Adjust pre element styling to avoid nested box effect. Add
+          Python example.
+        </p>
+        <p>
+          2025-06-05: Adjust width handling for improved responsiveness. Tweak
+          grid layout for better consictency.
+        </p>
         <p>2025-06-04: Redesign footer component. Add contact information.</p>
         <p>
           2025-06-03: Add initial documentation for code examples. Fix grid-box
@@ -171,5 +180,18 @@
         <!-- This is a ghost element to maintain layout consistency -->
       </div>
     </div>
+    <script>
+      // Randomly select a background image from the array
+      const images = [
+        "./assets/images/swe-photo-1.avif",
+        "./assets/images/swe-photo-2.avif",
+        "./assets/images/swe-photo-3.avif",
+      ];
+      const randomIndex = Math.floor(Math.random() * images.length);
+      const selectedImage = images[randomIndex];
+      document.body.style.backgroundImage = `url('${selectedImage}')`;
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundPosition = "center";
+    </script>
   </body>
 </html>
