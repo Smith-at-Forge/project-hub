@@ -81,16 +81,32 @@
         margin: 0;
         padding: 0;
       }
-      .list li a {
+      .list li {
         display: block; /* Make entire link area clickable */
-        padding-left: 0.5rem;
         /*text-decoration: none;*/ /* Remove underline from links */
         /*color: inherit;*/ /* Inherit text color to eliminate default blue link styling */
         border-radius: 5px;
-        transition: background 0.2s; /* Smooth color transition on hover */
+        transition: background 0.5s; /* Smooth color transition on hover */
       }
-      .list li a:hover {
+      .list li a {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        border-radius: 5px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+      }
+      .list li:hover {
         background: #f0f0f0;
+      }
+      .list li a img {
+        height: 2rem;
+      }
+      .list li a span {
+        display: flex;
+        align-items: center;
       }
     </style>
   </head>
@@ -113,23 +129,77 @@
         <ul class="list">
           <li>
             <a href="https://github.com/Smith-at-Forge/ShapeShifter"
-              >Shape Shifter</a
+              ><span>Shape Shifter</span><img
+                src="./assets/icons/c-sharp.svg"
+                style="height: 2rem"
+                alt="c-sharp Icon"
+            /><img
+                src="./assets/icons/unity.svg"
+                style="height: 2rem"
+                alt="unity Icon"
+            /></a
             >
           </li>
-          <li><a href="./first_webpage/index.html">First Webpage</a></li>
-          <li><a>Personal Website</a></li>
-          <li><a>Review Analytics</a></li>
+          <li><a href="./first_webpage/index.html"><span>First Webpage</span><img
+                src="./assets/icons/html5.svg"
+                style="height: 2rem"
+                alt="html5 Icon"
+            /><img
+                src="./assets/icons/css3.svg"
+                style="height: 2rem"
+                alt="css3 Icon"
+            /></a></li>
+          <li><a><span>Personal Website</span><img
+                src="./assets/icons/html5.svg"
+                style="height: 2rem"
+                alt="html5 Icon"
+            /><img
+                src="./assets/icons/css3.svg"
+                style="height: 2rem"
+                alt="css3 Icon"
+            /><img
+                src="./assets/icons/javascript.svg"
+                style="height: 2rem"
+                alt="javascript Icon"
+            /></a></li>
+          <li><a><span>Review Analytics</span><img
+                src="./assets/icons/python.svg"
+                style="height: 2rem"
+                alt="Python Icon"
+            /></a></li>
           <!-- Product Review Analytics (AI-powered) -->
         </ul>
         <h3>Code Examples</h3>
         <ul class="list">
-          <li><a href="./c++.html">C++</a></li>
-          <li><a href="./ccc.html">C</a></li>
-          <li><a href="./python.html">Python</a></li>
-          <li><a href="./php.html">PHP + MySQL</a></li>
+          <li>
+            <a href="./c++.html"
+              ><span>Complex Numbers</span>
+              <img
+                src="./assets/icons/c++.svg"
+                style="height: 2rem"
+                alt="C++ Icon"
+            /></a>
+          </li>
+          <li><a href="./ccc.html"><span>Tic Tac Toe</span><img
+                src="./assets/icons/c-original.svg"
+                style="height: 2rem"
+                alt="C Icon"
+            /></a></li>
+          <li><a href="./python.html"><span>Fraction Numbers</span><img
+                src="./assets/icons/python.svg"
+                style="height: 2rem"
+                alt="Python Icon"
+            /></a></li>
+          <li><a href="./php.html"><span>Realestate DB</span><img
+                src="./assets/icons/php.svg"
+                style="height: 2rem"
+                alt="PHP Icon"
+            /><img
+                src="./assets/icons/mysql.svg"
+                style="height: 2rem"
+                alt="MySQL Icon"
+            /></a></li>
           <li><a>jQuery</a></li>
-          <li><a>SQL</a></li>
-          <li><a>Bootstrap</a></li>
           <li><a>Node.js</a></li>
         </ul>
         <h3>Update Log</h3>
@@ -139,6 +209,12 @@
       </div>
       <div class="maincontent container">
         <h3>Update Log</h3>
+        <p>
+          2025-06-10: Add icons to website entries to visually indicate the technology used.
+        </p>
+        <p>
+          2025-06-08: Add PHP and MySQL to code examples.
+        </p>
         <p>
           2025-06-06: Add random background selection for main page. Consolidate
           code example styles into shared CSS file. Fix Prism DOM structure
