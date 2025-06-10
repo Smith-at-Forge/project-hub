@@ -124,7 +124,7 @@ StrasseHNr VARCHAR(30) NOT NULL
 	@mysqli_free_result($eID);
 	} else {
 	//..................................................................
-		if (isset($_GET['h']) && $_GET['h']==0) { // $_GET['h']==0 
+		if (isset($_GET['h']) && $_GET['h']==0) { // $_GET["h"]==0  
 
 		echo "&lt;p>Neuanlage Haus:&lt;/p>";
 		echo "&lt;form action='immo.php' method='post'
@@ -180,9 +180,9 @@ StrasseHNr VARCHAR(30) NOT NULL
 		echo "&lt;input type='submit' value='eintragen'>";
 		echo "&lt;/form>";
 
-		} // $_GET['h']==0
+		} // $_GET["h"]==0
 	//..................................................................
-		if (isset($_GET['h']) && $_GET['h']>0) {  // $_GET['h']>0
+		if (isset($_GET['h']) && $_GET['h']>0) {  // $_GET["h"]>0
 		$HausID=$_GET['h'];
 
 		$a = "SELECT AdressID,WohnungsZahl,Besitzer";
@@ -273,7 +273,7 @@ StrasseHNr VARCHAR(30) NOT NULL
 		echo "&lt;/form>";
 		// Loeschformular Ende
 
-		} // $_GET['h']>0
+		} // $_GET["h"]>0
 
 	//..................................................................
 		if (isset($_POST['ET']) && $_POST['ET']=='h') { // Entitätstyp Haus
