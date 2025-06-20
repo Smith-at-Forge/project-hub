@@ -5,116 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smith's Portfolio</title>
     <link rel="stylesheet" href="./fonts/fonts.css" />
-    <style>
-      html {
-        font-size: 16px; /* Default font size for rem units */
-      }
-      body {
-        /* General styling */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        padding: 0;
-        text-align: left;
-        font-family: Cambria, JetBrainsMono;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 1.25rem; /* Increase base font size */
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: Helvetica, serif;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: 1fr 4fr;
-        grid-template-rows: 1fr 15fr 1fr;
-        padding: 2rem 2rem 0 2rem; /* Padding for the grid container, bottom = 0 */
-        height: calc(
-          100vh - 2rem
-        ); /* Full viewport height minus footer ghost */
-        gap: 1rem;
-        max-width: 1080px; /* Maximum width for the grid */
-      }
-      .container {
-        background: rgba(
-          255,
-          255,
-          255,
-          0.85
-        ); /* White background with 80% opacity */
-        margin: 0;
-        padding: 1rem;
-        border-width: 2px;
-        border-style: solid;
-        border-color: black;
-        border-radius: 1rem;
-      }
-      .header {
-        grid-column: span 2;
-      }
-      .footer {
-        grid-column: span 2;
-      }
-      .footer {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font-size: 1.1rem; /* Smaller font size for footer */
-        padding: 1.5rem; /* Padding for footer */
-      }
-      .footer.ghost {
-        grid-column: span 2;
-        padding: 0;
-        height: 1rem;
-      }
-      .list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      .list li {
-        display: block; /* Make entire link area clickable */
-        /*text-decoration: none;*/ /* Remove underline from links */
-        /*color: inherit;*/ /* Inherit text color to eliminate default blue link styling */
-        border-radius: 5px;
-        transition: background 0.5s; /* Smooth color transition on hover */
-      }
-      .list li a {
-        display: flex;
-        justify-content: space-between;
-        align-content: center;
-        border-radius: 5px;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-        padding-top: 0.25rem;
-        padding-bottom: 0.25rem;
-      }
-      .list li:hover {
-        background: #f0f0f0;
-      }
-      .list li a img {
-        height: 2rem;
-      }
-      .list li a span {
-        display: flex;
-        align-items: center;
-      }
-    </style>
+    <link rel="stylesheet" href="./css/style_main.css" />
+    <style></style>
   </head>
 
   <body>
     <div class="grid">
       <div class="header container">
-        <h1>Smith-at-Forge</h1>
+        <a href="./index.html"
+          ><span><h1>Smith-at-Forge</h1></span
+          ><img
+            src="./assets/images/anvil.png"
+            style="height: 4rem"
+            alt="anvil png"
+        /></a>
+      </div>
+      <div class="navbar container">
+        <h3>Projects</h3>
+        <ul class="list">
+          <li>
+            <a href="https://github.com/Smith-at-Forge/ShapeShifter"
+              ><span>Shape Shifter</span
+              ><img
+                src="./assets/icons/c-sharp.svg"
+                style="height: 2rem"
+                alt="c-sharp Icon" /><img
+                src="./assets/icons/unity.svg"
+                style="height: 2rem"
+                alt="unity Icon"
+            /></a>
+          </li>
+          <li>
+            <a href="./webdev/first_webpage/index.html"
+              ><span>First Webpage</span
+              ><img
+                src="./assets/icons/html5.svg"
+                style="height: 2rem"
+                alt="html5 Icon" /><img
+                src="./assets/icons/css3.svg"
+                style="height: 2rem"
+                alt="css3 Icon"
+            /></a>
+          </li>
+          <li>
+            <a
+              ><span>Personal Website</span
+              ><img
+                src="./assets/icons/html5.svg"
+                style="height: 2rem"
+                alt="html5 Icon" /><img
+                src="./assets/icons/css3.svg"
+                style="height: 2rem"
+                alt="css3 Icon" /><img
+                src="./assets/icons/javascript.svg"
+                style="height: 2rem"
+                alt="javascript Icon"
+            /></a>
+          </li>
+          <li>
+            <a
+              ><span>Review Analytics</span
+              ><img
+                src="./assets/icons/python.svg"
+                style="height: 2rem"
+                alt="Python Icon"
+            /></a>
+          </li>
+          <!-- Product Review Analytics (AI-powered) -->
+        </ul>
+        <h3>Code Examples</h3>
+        <ul class="list">
+          <li>
+            <a href="#" data-page="./pages/e-complex_numbers.html"
+              ><span>Complex Numbers</span>
+              <img
+                src="./assets/icons/c++.svg"
+                style="height: 2rem"
+                alt="C++ Icon"
+            /></a>
+          </li>
+          <li>
+            <a href="#" data-page="./pages/e-tic_tac_toe.html"
+              ><span>Tic Tac Toe</span
+              ><img
+                src="./assets/icons/c-original.svg"
+                style="height: 2rem"
+                alt="C Icon"
+            /></a>
+          </li>
+          <li>
+            <a href="#" data-page="./pages/e-fraction.html"
+              ><span>Fraction Numbers</span
+              ><img
+                src="./assets/icons/python.svg"
+                style="height: 2rem"
+                alt="Python Icon"
+            /></a>
+          </li>
+          <li>
+            <a href="./php.html"
+              ><span>Realestate DB</span
+              ><img
+                src="./assets/icons/php.svg"
+                style="height: 2rem"
+                alt="PHP Icon" /><img
+                src="./assets/icons/mysql.svg"
+                style="height: 2rem"
+                alt="MySQL Icon"
+            /></a>
+          </li>
+          <li><a>jQuery</a></li>
+          <li><a>Node.js</a></li>
+        </ul>
+        <h3>Changelog</h3>
+        <ul class="list">
+          <li>
+            <!-- Using href="#" as a placeholder prevents real navigation. -->
+            <a href="#" data-page="./pages/changelog.html">Changelog</a>
+          </li>
+        </ul>
+      </div>
+      <div class="maincontent container">
         <h2>Welcome to my Project Hub</h2>
         <p>
           Here you’ll find examples of code I’ve written, along with both
@@ -124,129 +135,6 @@
           This website is still being forged, so be sure to check back soon!
         </p>
       </div>
-      <div class="navbar container">
-        <h3>Projects</h3>
-        <ul class="list">
-          <li>
-            <a href="https://github.com/Smith-at-Forge/ShapeShifter"
-              ><span>Shape Shifter</span><img
-                src="./assets/icons/c-sharp.svg"
-                style="height: 2rem"
-                alt="c-sharp Icon"
-            /><img
-                src="./assets/icons/unity.svg"
-                style="height: 2rem"
-                alt="unity Icon"
-            /></a
-            >
-          </li>
-          <li><a href="./webdev/first_webpage/index.html"><span>First Webpage</span><img
-                src="./assets/icons/html5.svg"
-                style="height: 2rem"
-                alt="html5 Icon"
-            /><img
-                src="./assets/icons/css3.svg"
-                style="height: 2rem"
-                alt="css3 Icon"
-            /></a></li>
-          <li><a><span>Personal Website</span><img
-                src="./assets/icons/html5.svg"
-                style="height: 2rem"
-                alt="html5 Icon"
-            /><img
-                src="./assets/icons/css3.svg"
-                style="height: 2rem"
-                alt="css3 Icon"
-            /><img
-                src="./assets/icons/javascript.svg"
-                style="height: 2rem"
-                alt="javascript Icon"
-            /></a></li>
-          <li><a><span>Review Analytics</span><img
-                src="./assets/icons/python.svg"
-                style="height: 2rem"
-                alt="Python Icon"
-            /></a></li>
-          <!-- Product Review Analytics (AI-powered) -->
-        </ul>
-        <h3>Code Examples</h3>
-        <ul class="list">
-          <li>
-            <a href="./c++.html"
-              ><span>Complex Numbers</span>
-              <img
-                src="./assets/icons/c++.svg"
-                style="height: 2rem"
-                alt="C++ Icon"
-            /></a>
-          </li>
-          <li><a href="./ccc.html"><span>Tic Tac Toe</span><img
-                src="./assets/icons/c-original.svg"
-                style="height: 2rem"
-                alt="C Icon"
-            /></a></li>
-          <li><a href="./python.html"><span>Fraction Numbers</span><img
-                src="./assets/icons/python.svg"
-                style="height: 2rem"
-                alt="Python Icon"
-            /></a></li>
-          <li><a href="./php.html"><span>Realestate DB</span><img
-                src="./assets/icons/php.svg"
-                style="height: 2rem"
-                alt="PHP Icon"
-            /><img
-                src="./assets/icons/mysql.svg"
-                style="height: 2rem"
-                alt="MySQL Icon"
-            /></a></li>
-          <li><a>jQuery</a></li>
-          <li><a>Node.js</a></li>
-        </ul>
-        <h3>Update Log</h3>
-        <ul class="list">
-          <li><a href="./index.html">Update Log</a></li>
-        </ul>
-      </div>
-      <div class="maincontent container">
-        <h3>Update Log</h3>
-        <p>
-          2025-06-10: Add icons to website entries to visually indicate the technology used.
-        </p>
-        <p>
-          2025-06-08: Add PHP and MySQL to code examples.
-        </p>
-        <p>
-          2025-06-06: Add random background selection for main page. Consolidate
-          code example styles into shared CSS file. Fix Prism DOM structure
-          issue. Adjust pre element styling to avoid nested box effect. Add
-          Python example.
-        </p>
-        <p>
-          2025-06-05: Adjust width handling for improved responsiveness. Tweak
-          grid layout for better consictency.
-        </p>
-        <p>2025-06-04: Redesign footer component. Add contact information.</p>
-        <p>
-          2025-06-03: Add initial documentation for code examples. Fix grid-box
-          responsiveness issue on browser resize.
-        </p>
-        <p>
-          2025-06-02: Add background image. Update comments in update log for
-          consistency. Redesign list elements as block elements with hover for
-          improved usability.
-        </p>
-
-        <p>
-          2025-06-01: Fix JetBrains Mono font rendering. Add source directory
-          with initial files. Add .gitignore.
-        </p>
-        <p>
-          2025-05-28: Integrate Prism.js for syntax highlighting. Add C example.
-        </p>
-        <p>2025-05-27: Add JetBrains Mono font.</p>
-        <p>2025-05-26: Redesign homepage.</p>
-        <p>2025-05-25: Initial homepage creation.</p>
-      </div>
       <div class="footer container">
         <div>About me</div>
         <div><a href="https://github.com/Smith-at-Forge">Contact me</a></div>
@@ -255,19 +143,8 @@
       <div class="footer ghost" style="visibility: hidden">
         <!-- This is a ghost element to maintain layout consistency -->
       </div>
+      
     </div>
-    <script>
-      // Randomly select a background image from the array
-      const images = [
-        "./assets/images/swe-photo-1.avif",
-        "./assets/images/swe-photo-2.avif",
-        "./assets/images/swe-photo-3.avif",
-      ];
-      const randomIndex = Math.floor(Math.random() * images.length);
-      const selectedImage = images[randomIndex];
-      document.body.style.backgroundImage = `url('${selectedImage}')`;
-      document.body.style.backgroundSize = "cover";
-      document.body.style.backgroundPosition = "center";
-    </script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
