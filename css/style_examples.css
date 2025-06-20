@@ -8,6 +8,7 @@ pre {
   font-family: JetBrainsMono, monospace;
   font-style: normal; /* Disable italic style (default for <code> in some browsers) */
   font-weight: 500; /* Apply medium font weight for better visual balance */
+  max-width: 100%; /* Ensure pre blocks do not exceed container width */
   overflow-x: auto; /* Enable horizontal scrolling for long code lines */
   line-height: 1.5; /* Improve readability with increased line spacing */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
