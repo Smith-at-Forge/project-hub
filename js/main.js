@@ -35,3 +35,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.getElementById("up-link").addEventListener("click", function (e) {
+  e.preventDefault();
+  const aa = ["t", "c", "a", "t", "n", "o", "c"].reverse().join("");
+  const bb = String.fromCharCode(64);
+  const cc = "smith-at-forge";
+  const dd = ["m", "o", "c", "."].reverse().join("");
+  const ee = aa + bb + cc + dd;
+  // Change the href attribute of the <a> element
+  // window.location refers to the current page's clicked element
+  window.location.href = [":", "o", "t", "l", "i", "a", "m"].reverse().join("") + ee;
+});
