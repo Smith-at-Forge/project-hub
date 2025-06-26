@@ -25,6 +25,9 @@ function startRound() {
   btnSelectedArray.push(btnSelected); // Add the selected button to the array
   console.log("Sequence:", btnSelectedArray); // Log the selected button
 
+  $("#level-title").css("color", "#80aeac");
+  $("#status").text("Memorize"); // Update status text
+  $("#rules").css("color", "#80aeac");
   // for loop to flash the buttons within array, with setTimeout
   for (let i = 0; i < btnSelectedArray.length; i++) {
     setTimeout(function () {
@@ -37,6 +40,7 @@ function startRound() {
   // Set a timeout to enable clicks after the for loop completes
   setTimeout(function () {
     console.log("Click it now!");
+    $("#status").text("Your turn");
     $(".btn").on("click", handleClick);
   }, btnSelectedArray.length * 500);
 }
@@ -48,6 +52,9 @@ function handleClick() {
   if (!gameFlag) return; // Prevent clicks before the round starts
 
   const btnId = $(this).attr("id");
+  $("#" + btnId)
+    .fadeOut(250)
+    .fadeIn(250);
   btnClickedArray.push(btnId);
   console.log("Clicked so far:", btnClickedArray);
 
@@ -64,9 +71,12 @@ function handleClick() {
     } else {
       console.log("Wrong! Game over. Resetting the game.");
       alert("Wrong! Game over. Resetting the game.");
-      // Reset selected array
+      // Reset selected array and the rest
       // Clicked array is reset automatically in the next round
       btnSelectedArray = [];
+      $("#level-title").css("color", "#FFF1CA");
+      $("#status").text("Get ready!");
+      $("#rules").css("color", "#000");
     }
   }
 }
