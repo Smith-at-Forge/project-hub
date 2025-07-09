@@ -22,7 +22,7 @@ h4,
 h5,
 h6 {
   font-family: Helvetica, serif;
-/*   margin-top: 1.5rem;
+  /*   margin-top: 1.5rem;
   margin-bottom: 0.5rem; */
 }
 /* p {
@@ -59,8 +59,9 @@ h6 {
   border-width: 2px;
   border-style: solid;
   border-color: black;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
+
 .header {
   grid-column: span 2;
 }
@@ -78,6 +79,16 @@ h6 {
   text-align: center;
   text-decoration: none; /* Remove underline from links */
   color: inherit; /* Inherit text color to eliminate default blue link styling */
+}
+.headerButton {
+  border-radius: 5px;
+  padding: 0.5rem;
+  transition: background 0.5s;
+  box-shadow: 0.5s; /* Smooth color transition on hover */
+}
+.headerButton:hover {
+  background-color: #f0f0f0; /* Slightly darken the button to confirm the hover state. */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Apply a subtle shadow to create a sense of elevation. */
 }
 .header.container a span {
   display: flex;
@@ -112,6 +123,10 @@ h6 {
   border-radius: 5px;
   transition: background 0.5s; /* Smooth color transition on hover */
 }
+.list li:hover {
+  background: #f0f0f0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Apply a subtle shadow to create a sense of elevation. */
+}
 .list li a {
   display: flex;
   justify-content: space-between;
@@ -121,9 +136,8 @@ h6 {
   padding-right: 0.5rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-.list li:hover {
-  background: #f0f0f0;
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit text color to eliminate default blue link styling */
 }
 .list li a img {
   height: 2rem;
@@ -144,7 +158,9 @@ h6 {
   font-family: JetBrainsMono, monospace;
   font-style: normal; /* Disable italic style (default for <code> in some browsers) */
   font-weight: 500; /* Apply medium font weight for better visual balance */
-  max-width: calc(100% - 2rem); /* Ensure code blocks do not exceed container width */
+  max-width: calc(
+    100% - 2rem
+  ); /* Ensure code blocks do not exceed container width */
   overflow-x: auto; /* Enable horizontal scrolling for long code lines */
   line-height: 1.5; /* Improve readability with increased line spacing */
   white-space: pre-wrap; /* Preserve whitespace and line breaks */
