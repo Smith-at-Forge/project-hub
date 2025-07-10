@@ -15,6 +15,9 @@ body {
   font-weight: 500;
   font-size: 1.25rem; /* Increase base font size */
 }
+h1 {
+  margin: 0;
+}
 h1,
 h2,
 h3,
@@ -29,19 +32,12 @@ h6 {
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
 } */
-.header h1,
-.header h2,
-.header h3,
-.header h4,
-.header h5,
-.header h6,
-.navbar h1,
 .navbar h2,
 .navbar h3,
 .navbar h4,
 .navbar h5,
 .navbar h6 {
-  padding-left: 0.5rem;
+  margin-left: 0.5rem;
 }
 .grid {
   display: grid;
@@ -49,7 +45,7 @@ h6 {
   grid-template-rows: 1fr 15fr 1fr;
   padding: 2rem 2rem 0 2rem; /* Padding for the grid container, bottom = 0 */
   height: calc(100vh - 2rem); /* Full viewport height minus footer ghost */
-  gap: 1rem;
+  gap: 0rem;
   max-width: 1080px; /* Maximum width for the grid */
 }
 .container {
@@ -59,9 +55,45 @@ h6 {
   border-width: 2px;
   border-style: solid;
   border-color: black;
-  border-radius: 0.5rem;
 }
-
+.header.container {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom: none; /* Remove bottom border for header */
+}
+.navbar.container {
+  border-right: none; /* Remove bottom border for navbar */
+  padding-top: 0rem;
+  padding-left: 0.5rem; /* Add left padding for navbar */
+  padding-right: 0.5rem; /* Add right padding for navbar */
+}
+/*
+ * Adds a separator line above each major section in the navbar.
+ * Targets every H3 element except for the very first one.
+ * The use of margin-top and padding-top ensures the line has some
+ * breathing room.
+ */
+.navbar h3:not(:first-of-type) {
+  border-top: 1px solid black; /* Defines the separator line. */
+  margin-top: 1rem; /* Adds space above the line. */
+  padding-top: 1rem; /* Adds space between the line and the heading text. */
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.maincontent.container {
+  padding-top: 0rem;
+}
+.maincontent h4 {
+  border-top: 1px solid black; /* Defines the separator line. */
+  margin-top: 1rem; /* Adds space above the line. */
+  padding-top: 1rem; /* Adds space between the line and the heading text. */
+  height: 2rem; /* Fixed height for the heading */
+}
+.footer.container {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top: none; /* Remove top border for footer */
+}
 .header {
   grid-column: span 2;
 }
@@ -107,9 +139,10 @@ h6 {
   padding: 1.5rem; /* Padding for footer */
 }
 .footer.ghost {
+  /* Ghost footer for spacing */
   grid-column: span 2;
   padding: 0;
-  height: 1rem;
+  height: 2rem;
 }
 .list {
   list-style: none;
