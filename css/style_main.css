@@ -15,6 +15,13 @@ body {
   font-weight: 500;
   font-size: 1.25rem; /* Increase base font size */
 }
+p, ul, ol {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+ul, ol {
+  padding-left: 1.25rem;
+}
 h1 {
   margin: 0;
 }
@@ -25,13 +32,14 @@ h4,
 h5,
 h6 {
   font-family: Helvetica, serif;
-  /*   margin-top: 1.5rem;
-  margin-bottom: 0.5rem; */
 }
-/* p {
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-} */
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1rem;
+}
 .navbar h2,
 .navbar h3,
 .navbar h4,
@@ -87,7 +95,6 @@ h6 {
   border-top: 1px solid black; /* Defines the separator line. */
   margin-top: 1rem; /* Adds space above the line. */
   padding-top: 1rem; /* Adds space between the line and the heading text. */
-  height: 2rem; /* Fixed height for the heading */
 }
 .footer.container {
   border-bottom-left-radius: 1rem;
