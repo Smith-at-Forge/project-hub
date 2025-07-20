@@ -45,5 +45,26 @@ document.getElementById("up-link").addEventListener("click", function (e) {
   const ee = aa + bb + cc + dd;
   // Change the href attribute of the <a> element
   // window.location refers to the current page's clicked element
-  window.location.href = [":", "o", "t", "l", "i", "a", "m"].reverse().join("") + ee;
+  window.location.href =
+    [":", "o", "t", "l", "i", "a", "m"].reverse().join("") + ee;
+});
+
+// ####################################
+// For the collapsible header sections.
+// ####################################
+
+// Select all elements designated as collapsible headers.
+const collapsibleHeaders = document.querySelectorAll(".collapsible-header");
+// Iterate over each header to attach the click functionality.
+collapsibleHeaders.forEach((header) => {
+  header.addEventListener("click", () => {
+    // Find the content list, which is the immediate next sibling of the header.
+    const contentList = header.nextElementSibling;
+    // A defensive check to ensure the sibling element exists before proceeding.
+    if (contentList) {
+      // Toggle the 'collapsed' class on the list.
+      // The CSS will automatically handle the visibility and icon rotation.
+      contentList.classList.toggle("collapsed");
+    }
+  });
 });
