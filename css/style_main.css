@@ -15,11 +15,14 @@ body {
   font-weight: 500;
   font-size: 1.25rem; /* Increase base font size */
 }
-p, ul, ol {
+p,
+ul,
+ol {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-ul, ol {
+ul,
+ol {
   padding-left: 1.25rem;
 }
 h1 {
@@ -204,4 +207,37 @@ h6 {
   overflow-x: auto; /* Enable horizontal scrolling for long code lines */
   line-height: 1.5; /* Improve readability with increased line spacing */
   white-space: pre-wrap; /* Preserve whitespace and line breaks */
+}
+
+/* ###########################################
+ * Styles for the collapsible navbar sections.
+   ########################################### */
+.collapsible-header {
+  display: flex; /* Use flexbox to align the icon and text on the same line. */
+  align-items: center;
+  gap: 0.5rem; /* Adds a small space between the icon and the text. */
+  cursor: pointer; /* Change the cursor to a pointer to indicate it's clickable. */
+  user-select: none; /* Prevents text selection on double-click, improving user experience. */
+}
+/* Targets the icon container within the header. */
+.collapsible-header .icon-arrow-toggle {
+  display: flex; /* Ensures the icon itself is also aligned, especially if it has extra space. */
+  align-items: center;
+  transition: transform 0.3s ease-in-out; /* Adds a smooth animation to the rotation. */
+}
+
+/* Hides the list when it has the .collapsed class. */
+.list.collapsed {
+  display: none;
+}
+
+/*
+ * This is the core logic for the icon rotation.
+ * It selects a header that has an immediately following sibling (+)
+ * which is a .list that is also .collapsed.
+ * It then rotates the .toggle-icon within that header.
+ * Your 'arrow-down.png' will now point to the left when collapsed.
+ */
+h3.collapsible-header:has(+ .list.collapsed) .icon-arrow-toggle {
+  transform: rotate(-90deg);
 }
