@@ -53,18 +53,18 @@ document.getElementById("up-link").addEventListener("click", function (e) {
 // For the collapsible header sections.
 // ####################################
 
-// Select all elements designated as collapsible headers.
-const collapsibleHeaders = document.querySelectorAll(".collapsible-header");
-// Iterate over each header to attach the click functionality.
-collapsibleHeaders.forEach((header) => {
-  header.addEventListener("click", () => {
-    // Find the content list, which is the immediate next sibling of the header.
+document.addEventListener("click", function (event) {
+  // Use .closest() to find the nearest ancestor that matches our header classes.
+  // This correctly identifies the header whether the click was on the text, icon, or padding.
+  const header = event.target.closest(
+    ".collapsible-header, .collapsible-header-maincontent-container"
+  );
+  // If a matching header was found in the element's ancestry, proceed.
+  if (header) {
     const contentList = header.nextElementSibling;
-    // A defensive check to ensure the sibling element exists before proceeding.
+    // A defensive check ensures the content element exists before we toggle its class.
     if (contentList) {
-      // Toggle the 'collapsed' class on the list.
-      // The CSS will automatically handle the visibility and icon rotation.
       contentList.classList.toggle("collapsed");
     }
-  });
+  }
 });
