@@ -60,7 +60,7 @@ h6 {
   max-width: 1080px; /* Maximum width for the grid */
 }
 .container {
-  background: rgba(255, 255, 255, 0.85); /* White background with 80% opacity */
+  background: rgba(255, 255, 255, 0.9); /* White background with 90% opacity */
   margin: 0;
   padding: 1rem;
   border-width: 2px;
