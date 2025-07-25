@@ -273,6 +273,7 @@ h3.collapsible-header:has(+ .list.collapsed) .icon-arrow {
 .list-webdev {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -280,17 +281,34 @@ h3.collapsible-header:has(+ .list.collapsed) .icon-arrow {
 .list-webdev li {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 1rem;
   list-style: none;
   margin: 0;
   padding: 0;
+}
+.list-webdev li span {
+/*   display: flex;
+  flex-direction: column; */
+  border: 1px solid black;
 }
 .list-webdev li img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.list-webdev h4 {
+.button-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit text color to eliminate default blue link styling */
+  border: 1px solid black; /* Add a border to the link */
+  border-radius: 5px; /* Add rounded corners to the link */
+  margin: 1rem;
+}
+.list-webdev h4, .list-webdev p {
   border-top: none;
-  margin-top: none;
-  padding-top: none;
+  margin: 1rem;
+  padding: 0;
 }
