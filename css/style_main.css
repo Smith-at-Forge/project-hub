@@ -286,9 +286,10 @@ h3.collapsible-header:has(+ .list.collapsed) .icon-arrow {
   margin: 0;
   padding: 0;
 }
-.list-webdev li span {
-/*   display: flex;
-  flex-direction: column; */
+.list-webdev li span.span-border {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 1px solid black;
 }
 .list-webdev li img {
@@ -298,17 +299,25 @@ h3.collapsible-header:has(+ .list.collapsed) .icon-arrow {
 }
 .button-1 {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-decoration: none; /* Remove underline from links */
   color: inherit; /* Inherit text color to eliminate default blue link styling */
   border: 1px solid black; /* Add a border to the link */
-  border-radius: 5px; /* Add rounded corners to the link */
   margin: 1rem;
 }
-.list-webdev h4, .list-webdev p {
+.list-webdev h4,
+.list-webdev p {
   border-top: none;
   margin: 1rem;
   padding: 0;
+}
+.list-webdev li span a {
+  transition: background 0.5s, box-shadow 0.5s, border-radius 0.5s; /* Smooth transition on hover */
+}
+.list-webdev li span a:hover {
+  border-radius: 5px;
+  /* https://colorhunt.co/palette/fbfbfbe8f9ffc4d9ffc5baff */
+  background-color: #E8F9FF; /* Slightly darken the button to confirm the hover state. */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Apply a subtle shadow to create a sense of elevation. */
 }
