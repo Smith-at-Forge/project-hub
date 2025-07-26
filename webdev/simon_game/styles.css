@@ -8,30 +8,41 @@ body {
   font-family: "Press Start 2P", cursive;
   font-size: 3rem;
   margin: 5%;
-  color: #FFF1CA;
+  color: #fff1ca;
   line-height: 4rem;
 }
 
+h1,
 h2 {
   font-family: "Press Start 2P", cursive;
   font-size: 2rem;
   margin: 5%;
-  color: #FFF1CA;
+  color: #fff1ca;
 }
 
+.upper-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .container {
-  display: block;
-  width: 90%;
-  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  width: auto;
+  aspect-ratio: 1 / 1; /* Ensures square grid */
 }
 
 .btn {
-  margin: 25px;
   display: inline-block;
-  height: 200px;
-  width: 200px;
-  border: 10px solid black;
+  width: calc(100vw / 4); /* Adjusts button width based on viewport width */
+  aspect-ratio: 1 / 1; /* Ensures square buttons */
+  border: 0.5rem solid black;
   border-radius: 20%;
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  margin: 1rem;
 }
 
 .game-over {
