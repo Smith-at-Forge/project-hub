@@ -1,88 +1,104 @@
 // Array of button IDs
 let btnArray = ["green", "red", "yellow", "blue"];
-// Array to hold selected buttons
+// Array to hold the generated sequence
 let btnSelectedArray = [];
-// Array to hold clicked buttons
+// Array to hold the user's input sequence
 let btnClickedArray = [];
 
-let gameFlag = false; // Game-Flag
+// Flag to track the game state; prevents starting a new game while one is active.
+let gameFlag = false;
+
+// NEU: Die Start-Logik wird in eine benannte Funktion ausgelagert,
+// damit wir sie gezielt de- und reaktivieren können.
+function startGameHandler() {
+  if (!gameFlag) {
+    startRound();
+  }
+}
 
 $(document).ready(function () {
-  // Register a keydown event to start the game
-  $(document).keydown(function () {
-    if (gameFlag) return; // Prevent multiple initializations
-    startRound();
-  });
+  // GEÄNDERT: Der Event-Listener ruft jetzt die benannte Funktion auf.
+  $(document).on("keydown click", startGameHandler);
 });
 
-// Function to start a new round
+/**
+ * @brief Starts a new round of the game.
+ * Resets the user's clicks, adds a new color to the sequence, and plays the animation.
+ */
 function startRound() {
-  gameFlag = true; // Prevent further initializations
-  btnClickedArray = []; // Reset clicked array for each round
+  gameFlag = true;
+  btnClickedArray = [];
 
-  let randomNum = Math.floor(Math.random() * 4); // Random number generation
-  let btnSelected = btnArray[randomNum]; // Select the button based on the random number
-  btnSelectedArray.push(btnSelected); // Add the selected button to the array
-  console.log("Sequence:", btnSelectedArray); // Log the selected button
+  let randomNum = Math.floor(Math.random() * 4);
+  let btnSelected = btnArray[randomNum];
+  btnSelectedArray.push(btnSelected);
+  console.log("Sequence:", btnSelectedArray);
 
   $("#level-title").css("color", "#80aeac");
-  $("#status").text("Memorize"); // Update status text
+  $("#status").text("Memorize");
   $("#rules").css("color", "#80aeac");
-  // for loop to flash the buttons within array, with setTimeout
+
   for (let i = 0; i < btnSelectedArray.length; i++) {
     setTimeout(function () {
       $("#" + btnSelectedArray[i])
         .fadeOut(250)
         .fadeIn(250);
-    }, i * 500); // Delay each flash by 500ms (fadeOut + fadeIn)
+    }, i * 700);
   }
 
-  // Set a timeout to enable clicks after the for loop completes
   setTimeout(function () {
-    console.log("Click it now!");
+    console.log("Your turn to click!");
     $("#status").text("Your turn");
-    $(".btn").on("click", handleClick);
-  }, btnSelectedArray.length * 500);
+    $(".btn").off("click").on("click", handleClick);
+  }, btnSelectedArray.length * 700);
 }
 
-// Register a click handler for the buttons
-$(".btn").on("click", handleClick);
-
+/**
+ * @brief Handles the user's click on a Simon button.
+ * This is the core game logic during the user's turn.
+ */
 function handleClick() {
-  if (!gameFlag) return; // Prevent clicks before the round starts
-
   const btnId = $(this).attr("id");
   $("#" + btnId)
-    .fadeOut(250)
-    .fadeIn(250);
+    .fadeOut(100)
+    .fadeIn(100);
   btnClickedArray.push(btnId);
   console.log("Clicked so far:", btnClickedArray);
 
-  // Compare arrays if their lengths match
-  if (btnClickedArray.length === btnSelectedArray.length) {
-    $(".btn").off("click", handleClick); // Disable buttons to prevent further clicks
-    gameFlag = false; // Reset game flag for the next round
+  const lastClickIndex = btnClickedArray.length - 1;
 
-    if (arraysEqual(btnClickedArray, btnSelectedArray)) {
-      console.log("Correct! Proceeding to the next round.");
-      setTimeout(function () {
-        $(document).trigger("keydown");
-      }, 1000);
-    } else {
-      console.log("Wrong! Game over. Resetting the game.");
-      alert("Wrong! Game over. Resetting the game.");
-      // Reset selected array and the rest
-      // Clicked array is reset automatically in the next round
-      btnSelectedArray = [];
-      $("#level-title").css("color", "#FFF1CA");
-      $("#status").text("Get ready!");
-      $("#rules").css("color", "#000");
-    }
+  if (btnClickedArray[lastClickIndex] !== btnSelectedArray[lastClickIndex]) {
+    handleGameOver();
+  } else if (btnClickedArray.length === btnSelectedArray.length) {
+    console.log("Correct! Proceeding to the next round.");
+    $(".btn").off("click");
+    setTimeout(startRound, 1000);
   }
 }
 
-// Helper function to compare two arrays
-function arraysEqual(a, b) {
-  if (a.length !== b.length) return false;
-  return a.every((val, idx) => val === b[idx]);
+/**
+ * @brief Executes the game-over sequence.
+ * Disables input, shows an alert, and resets the game state.
+ */
+function handleGameOver() {
+  console.log("Wrong! Game over. Resetting the game.");
+  $(".btn").off("click");
+
+  // GEÄNDERT: Deaktiviert den Start-Listener, BEVOR der Alert erscheint.
+  $(document).off("keydown click", startGameHandler);
+
+  alert("Falsch! Spiel vorbei. Das Spiel wird zurückgesetzt.");
+
+  btnSelectedArray = [];
+  gameFlag = false;
+
+  $("#level-title").css("color", "#FFF1CA");
+  $("#status").text("Get ready!");
+  $("#rules").css("color", "#000");
+
+  // GEÄNDERT: Reaktiviert den Start-Listener mit einer kurzen Verzögerung.
+  // Dadurch wird der Klick vom Schließen des Alerts ignoriert.
+  setTimeout(function () {
+    $(document).on("keydown click", startGameHandler);
+  }, 100);
 }

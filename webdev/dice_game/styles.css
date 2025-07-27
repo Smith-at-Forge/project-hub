@@ -1,5 +1,5 @@
 body {
-  background-color: #393e46;
+  background-color: #535a66;
 }
 
 footer {
@@ -20,7 +20,8 @@ footer {
 }
 
 h1 {
-  margin: 30px;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
   font-family: "Indie Flower", cursive;
   text-shadow: 5px 0 #232931;
   font-size: 8rem;

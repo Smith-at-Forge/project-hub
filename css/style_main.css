@@ -313,11 +313,11 @@ h3.collapsible-header:has(+ .list.collapsed) .icon-arrow {
   padding: 0;
 }
 .list-webdev li span a {
-  transition: background 0.5s, box-shadow 0.5s, border-radius 0.5s; /* Smooth transition on hover */
+  transition: background-color 0.5s, box-shadow 0.5s, border-radius 0.5s; /* Smooth transition on hover */
 }
 .list-webdev li span a:hover {
   border-radius: 5px;
   /* https://colorhunt.co/palette/fbfbfbe8f9ffc4d9ffc5baff */
-  background-color: #E8F9FF; /* Slightly darken the button to confirm the hover state. */
+  background-color: #e8f9ff; /* Slightly darken the button to confirm the hover state. */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Apply a subtle shadow to create a sense of elevation. */
 }
