@@ -8,8 +8,8 @@ let btnClickedArray = [];
 // Flag to track the game state; prevents starting a new game while one is active.
 let gameFlag = false;
 
-// NEU: Die Start-Logik wird in eine benannte Funktion ausgelagert,
-// damit wir sie gezielt de- und reaktivieren können.
+// Named function for the start game handler.
+// To activate and deactivate the event listener.
 function startGameHandler() {
   if (!gameFlag) {
     startRound();
@@ -17,14 +17,14 @@ function startGameHandler() {
 }
 
 $(document).ready(function () {
-  // GEÄNDERT: Der Event-Listener ruft jetzt die benannte Funktion auf.
+  // Event listener for starting the game.
+  // Starts on keydown or click.
   $(document).on("keydown click", startGameHandler);
 });
 
-/**
- * @brief Starts a new round of the game.
- * Resets the user's clicks, adds a new color to the sequence, and plays the animation.
- */
+// Starts a new round of the game.
+// Resets the user's clicks, adds a new color to the sequence,
+// and plays the animation.
 function startRound() {
   gameFlag = true;
   btnClickedArray = [];
@@ -53,15 +53,13 @@ function startRound() {
   }, btnSelectedArray.length * 700);
 }
 
-/**
- * @brief Handles the user's click on a Simon button.
- * This is the core game logic during the user's turn.
- */
+// Handles the user's click on a Simon button.
+// This is the core game logic during the user's turn.
 function handleClick() {
   const btnId = $(this).attr("id");
   $("#" + btnId)
-    .fadeOut(100)
-    .fadeIn(100);
+    .fadeOut(150)
+    .fadeIn(150);
   btnClickedArray.push(btnId);
   console.log("Clicked so far:", btnClickedArray);
 
@@ -76,15 +74,13 @@ function handleClick() {
   }
 }
 
-/**
- * @brief Executes the game-over sequence.
- * Disables input, shows an alert, and resets the game state.
- */
+// Executes the game-over sequence.
+// Disables input, shows an alert, and resets the game state.
 function handleGameOver() {
   console.log("Wrong! Game over. Resetting the game.");
   $(".btn").off("click");
 
-  // GEÄNDERT: Deaktiviert den Start-Listener, BEVOR der Alert erscheint.
+  // deactivates the start listener before the alert appears
   $(document).off("keydown click", startGameHandler);
 
   alert("Falsch! Spiel vorbei. Das Spiel wird zurückgesetzt.");
@@ -96,8 +92,8 @@ function handleGameOver() {
   $("#status").text("Get ready!");
   $("#rules").css("color", "#000");
 
-  // GEÄNDERT: Reaktiviert den Start-Listener mit einer kurzen Verzögerung.
-  // Dadurch wird der Klick vom Schließen des Alerts ignoriert.
+  // This allows the start listener to be reactivated after a short delay,
+  // ignoring the click from closing the alert.
   setTimeout(function () {
     $(document).on("keydown click", startGameHandler);
   }, 100);
