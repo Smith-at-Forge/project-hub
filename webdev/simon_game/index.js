@@ -83,7 +83,7 @@ function handleGameOver() {
   // deactivates the start listener before the alert appears
   $(document).off("keydown click", startGameHandler);
 
-  alert("Falsch! Spiel vorbei. Das Spiel wird zurückgesetzt.");
+  alert("That's wrong, give it another try!");
 
   btnSelectedArray = [];
   gameFlag = false;
