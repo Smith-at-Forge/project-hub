@@ -131,7 +131,7 @@ h6 {
   border-radius: 5px;
   padding: 1rem;
   transition: background-color 0.5s, box-shadow 0.5s, border-radius 0.5s;
-  /* height: calc(100% - 1rem); */ /* Adjust this value as needed for your design. */
+  /* height: calc(100% - 1rem); */
   /* aspect-ratio: 1 / 1; */
 }
 .headerButton:hover {
