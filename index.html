@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smith's Portfolio</title>
     <!-- "image/x-icon" is for .ico, good for legacy browser -->
-    <link rel="icon" href="./assets/icons/anvil-centered.svg" type="image/svg+xml" />
+    <link
+      rel="icon"
+      href="./assets/icons/anvil-centered.svg"
+      type="image/svg+xml"
+    />
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./css/style_main.css" />
     <style></style>
@@ -69,6 +73,15 @@
           /></span>
         </h3>
         <ul class="list collapsed">
+          <li>
+            <a href="#" data-page="./pages/p4-data-lab.html"
+              ><span>Data Evaluation</span
+              ><img
+                src="./assets/icons/python.svg"
+                style="height: 2rem"
+                alt="Python Icon"
+            /></a>
+          </li>
           <li>
             <a href="#" data-page="./pages/p2-webdev.html"
               ><span>Web Development</span
@@ -177,8 +190,16 @@
             /></a>
           </li>
         </ul>
-        <h3>Changelog</h3>
-        <ul class="list">
+        <h3 class="collapsible-header">
+          <span>Changelog</span>
+          <span class="icon-arrow"
+            ><img
+              src="./assets/icons/arrow-down.png"
+              style="height: 2rem"
+              alt="Arrow Icon"
+          /></span>
+        </h3>
+        <ul class="list collapsed">
           <li>
             <!-- Using href="#" as a placeholder prevents real navigation. -->
             <a href="#" data-page="./pages/changelog.html">Changelog</a>
@@ -200,9 +221,7 @@
           Review Analytics is particularly worth mentioning.<br />
         </p>
         <h4>Code Examples</h4>
-        <p>
-          Some code from my early days as a developer.<br />
-        </p>
+        <p>Some code from my early days as a developer.<br /></p>
         <h4>Changelog</h4>
         <p>Notes on website updates and changes.<br /></p>
       </div>
