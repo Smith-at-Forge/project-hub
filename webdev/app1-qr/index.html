@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QR-Gen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        text-align: center;
+        font-family: "Merriweather", serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>QR Code Generator</h1>
+    <form action="/check" method="POST">
+      <label for="password">Input your URL:</label><br /><br />
+      <!-- password -->
+      <!-- type="text" = user can place input -->
+      <!-- id="password" = to connect it with label -->
+      <!-- name="key_ident" = used as an identifier when sending input to server -->
+      <!-- required = have to be filled when sending input to server -->
+      <input type="text" id="password" name="key_ident" required /><br /><br />
+      <!-- type="submit" = makes it a clickable button -->
+      <!-- value="Send" = text inside the button -->
+      <input type="submit" value="Send" />
+    </form>
+    <img src="./qr.png" alt="Picture QR Code" />
+    <p>You may need to reload the page <br />to see the updated code.</p>
+  </body>
+</html>
