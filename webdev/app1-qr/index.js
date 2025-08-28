@@ -54,6 +54,6 @@ app.post("/check", (userInput, serverOutput) => {
   });
 });
 
-app.listen(port, () => {
+app.listen(port, '127.0.0.1', () => {
   console.log(`Server started on port ${port}`);
 });
