@@ -10,7 +10,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: left;
-  font-family: Merriweather, JetBrainsMono;
+  font-family: Cambria, JetBrainsMono; /* Merriweather 'Courier New' */
   font-style: normal;
   font-weight: 500;
   font-size: 1.25rem; /* Increase base font size */
@@ -34,7 +34,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Helvetica, serif;
+  font-family: Helvetica, serif; /* Helvetica 'Courier New' */
 }
 h2,
 h3,
