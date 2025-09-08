@@ -1,5 +1,20 @@
 html {
-  font-size: 16px; /* Default font size for rem units */
+  font-size: 16px; /* Default font size for REM units */
+}
+@media (max-width: 599px) {
+  html {
+    font-size: 4px; /* Smartphone, Tablet, etc. */
+  }
+}
+@media (min-width: 600px) and (max-width: 799px) {
+  html {
+    font-size: 8px; /* Smartphone, Tablet, etc. */
+  }
+}
+@media (min-width: 800px) and (max-width: 1000px) {
+  html {
+    font-size: 12px; /* Smartphone, Tablet, etc. */
+  }
 }
 body {
   /* General styling */
@@ -10,7 +25,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: left;
-  font-family: Cambria, JetBrainsMono; /* Merriweather 'Courier New' */
+  font-family: Cambria, JetBrainsMono; /* Merriweather JetBrainsMono 'Courier New' 'Roboto Slab' */
   font-style: normal;
   font-weight: 500;
   font-size: 1.25rem; /* Increase base font size */
