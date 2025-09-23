@@ -1,4 +1,8 @@
 {
   "welcome_headline": "Welcome to my Project Page",
-  "welcome_text": "Here you can see examples of things I've built, and some of the projects I'm working on or have made before.<br><br>This website is not finished yet, so please come back again soon!"
+  "welcome_text": "Here you can see examples of things I've built, and some of the projects I'm working on or have made before.<br><br>This website is not finished yet, so please come back again soon!",
+  "navbar_text": "Projects",
+  "navbar_about": "About Me",
+  "navbar_contact": "Contact",
+  "footer_text": "Made by [Your Name]"
 }
